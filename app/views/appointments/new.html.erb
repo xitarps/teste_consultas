@@ -1,0 +1,39 @@
+<h2>Nova Consulta</h2>
+
+
+
+<% if @appointment.errors.any? %>
+  <% @appointment.errors.full_messages.each do |message| %>
+    <p>
+      <%= message %>
+    </p>
+  <% end %>
+<% end %>
+
+
+
+<%= form_with model: @appointment, local: true do |f| %>
+  <p>
+    <%= f.label :title, "titulo" %>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :description, "Descrição" %>
+    <%= f.text_area :description %>
+  </p>
+
+  <p>
+    <%= f.label :address, "endereço" %>
+    <%= f.text_field :address %>
+  </p>
+
+  <p>
+    <%= f.label :visit_date, "Data" %>
+    <%= f.datetime_field :visit_date %>
+  </p>
+
+  <p>
+    <%= f.submit 'Salvar' %>
+  </p>
+<% end %>

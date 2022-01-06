@@ -1,0 +1,16 @@
+<h2>Detalhes da consulta</h2>
+
+<h3> <%= @appointment.title %></h3>
+<p>
+  <%= @appointment.description %>
+</p>
+<p>
+  <%= @appointment.address %>
+</p>
+<strong>
+  <%= @appointment.visit_date.to_formatted_s(:short) %>
+</strong>
+
+<p>
+  <%= link_to  "voltar", appointments_path %>
+</p>

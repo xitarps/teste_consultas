@@ -1,0 +1,28 @@
+<h2>Consultas</h2>
+
+<hr>
+  <p>
+    <%= link_to 'Nova', new_appointment_path %>
+  </p>
+<hr>
+
+<h3>Suas Consultas:</h3>
+
+
+<% @appointments.each do |appointment| %>
+  <p>
+    <%= appointment.title %>
+  </p>
+  <p>
+    <%= appointment.description.truncate(10) %>
+  </p>
+  <p>
+    <%= appointment.visit_date.to_formatted_s(:short) %>
+  </p>
+  <p>
+    <%= link_to  "Detalhes", appointment %> |
+    <%= link_to  "Editar", edit_appointment_path(appointment) %> |
+    <%= link_to  "apagar", appointment_path(appointment), method: :delete %>
+  </p>
+  <hr>
+<% end %>

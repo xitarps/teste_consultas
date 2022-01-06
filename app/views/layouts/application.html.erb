@@ -12,7 +12,9 @@
 
   <body>
     <%= render partial: 'shared/navbar' %>
-    <%= render partial: 'shared/messages' %>
-    <%= yield %>
+    <div class="container">
+      <%= render partial: 'shared/messages' %>
+      <%= yield %>
+    </div>
   </body>
 </html>
